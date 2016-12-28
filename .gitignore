@@ -4,3 +4,4 @@ obj
 .vs
 project.lock.json
 *.xproj.user
+TestResult.xml
