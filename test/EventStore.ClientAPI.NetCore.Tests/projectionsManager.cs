@@ -23,7 +23,7 @@ namespace Eventstore.ClientAPI.Tests.projectionsManager
             _credentials = TestNode.AdminCredentials;
             _connection = TestConnection.Create(TcpType.Normal, _credentials);
             _connection.ConnectAsync().Wait();
-            _projManager = new ProjectionsManager(new ConsoleLogger(), TestNode.HttpEndPoint, TimeSpan.FromSeconds(10));
+            _projManager = new ProjectionsManager(new ConsoleLogger(), TestNode.HttpEndPoint, TimeSpan.FromSeconds(20));
             Given();
             When();
         }
@@ -254,7 +254,7 @@ namespace Eventstore.ClientAPI.Tests.projectionsManager
         {
             var projectionStatus = _projManager.GetStatusAsync(_projectionName, _credentials).Result;
             var status = projectionStatus.ParseJson<JObject>()["status"].ToString();
-            Assert.IsTrue(status.Contains("Stopped"));
+            Assert.IsTrue(status.Contains("Stopped"), "Status did not contain 'Stopped' : {0}", status);
         }
     }
 
@@ -289,7 +289,7 @@ namespace Eventstore.ClientAPI.Tests.projectionsManager
         {
             var projectionStatus = _projManager.GetStatusAsync(_projectionName, _credentials).Result;
             var status = projectionStatus.ParseJson<JObject>()["status"].ToString();
-            Assert.IsTrue(status.Contains("Running"));
+            Assert.IsTrue(status.Contains("Running"), "Status did not contain 'Running' : {0}", status);
         }
     }
 
