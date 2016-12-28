@@ -17,7 +17,7 @@ build:
           apt-get install wget
           wget http://download.geteventstore.com/binaries/EventStore-OSS-Ubuntu-14.04-v3.9.1.tar.gz
           tar xfv EventStore-OSS-Ubuntu-14.04-v3.9.1.tar.gz
-          nohup ./EventStore-OSS-Ubuntu-14.04-v3.9.1/eventstored --enable-trusted-auth &
+          nohup ./EventStore-OSS-Ubuntu-14.04-v3.9.1/eventstored --enable-trusted-auth --run-projections All &
           
     # Build
     - script:
