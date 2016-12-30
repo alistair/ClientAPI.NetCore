@@ -25,6 +25,8 @@ build:
         code: |
           ./build.sh
     - script:
+      name: copy file
+      code : |
         sh -c 'echo "I am output, look at me" > test.txt'
         cp test.txt $WERCKER_REPORT_ARTIFACTS_DIR
     # Run tests
