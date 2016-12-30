@@ -31,7 +31,7 @@ build:
         name: Run tests
         code: |
           dotnet restore
-          ./run_supressed_tests.sh
+          ./run_suppressed_tests.sh
     
   aftersteps:
     - script:
