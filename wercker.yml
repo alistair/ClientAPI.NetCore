@@ -36,7 +36,7 @@ build:
     - script:
         name: copy log files
         code: | 
-          cp EventStore-OSS-Ubuntu-14.04-v3.9.3\log.config $WERCKER_REPORT_ARTIFACTS_DIR
+          cp EventStore-OSS-Ubuntu-14.04-v3.9.3/log.config $WERCKER_REPORT_ARTIFACTS_DIR
           echo "contents of ."
           ls .
           echo "contents of Event Store"
