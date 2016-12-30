@@ -37,10 +37,6 @@ build:
     - script:
         name: copy log files
         code: | 
-          ps
-          echo "killing eventstore"
-          pkill eventstored > $WERCKER_REPORT_ARTIFACTS_DIR/kill.txt
-          echo "killed eventstore"
           ls 
           ls ./serverlogs
           echo "copying server logs"
