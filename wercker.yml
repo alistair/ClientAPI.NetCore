@@ -35,8 +35,8 @@ build:
     
   aftersteps:
     - script:
-      name: copy log files
-      code: | 
-        pkill eventstored
-        cp serverlogs $WERCKER_REPORT_ARTIFACTS_DIR
-        cp ./build.out $WERCKER_REPORT_ARTIFACTS_DIR
+        name: copy log files
+        code: | 
+          pkill eventstored
+          cp serverlogs $WERCKER_REPORT_ARTIFACTS_DIR
+          cp ./build.out $WERCKER_REPORT_ARTIFACTS_DIR
