@@ -39,7 +39,7 @@ build:
         name: copy log files
         code: | 
           echo "killing eventstore"
-          pkill eventstored
+          killall eventstored
           echo "killed eventstore"
           ls 
           ls ./serverlogs
