@@ -5,3 +5,4 @@ obj
 project.lock.json
 *.xproj.user
 TestResult.xml
+*.nuget.props
