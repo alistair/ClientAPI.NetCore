@@ -33,7 +33,7 @@ build:
           dotnet restore
           ./run_suppressed_tests.sh
     
-  aftersteps:
+  after-steps:
     - script:
         name: copy log files
         code: | 
