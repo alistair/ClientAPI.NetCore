@@ -37,9 +37,8 @@ build:
     - script:
         name: copy log files
         code: | 
-          ls 
           ls ./serverlogs
           echo "copying server logs"
-          cp ./serverlogs $WERCKER_REPORT_ARTIFACTS_DIR
+          cp serverlogs $WERCKER_REPORT_ARTIFACTS_DIR
           echo "copying output"
           cp ./build.out $WERCKER_REPORT_ARTIFACTS_DIR
