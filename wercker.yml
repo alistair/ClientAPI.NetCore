@@ -37,6 +37,7 @@ build:
     - script:
         name: copy log files
         code: | 
+          echo "can we get some output?"
           pkill eventstored
           cp serverlogs $WERCKER_REPORT_ARTIFACTS_DIR
           cp ./build.out $WERCKER_REPORT_ARTIFACTS_DIR
