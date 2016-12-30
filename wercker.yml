@@ -37,8 +37,9 @@ build:
     - script:
         name: copy log files
         code: | 
+          ps
           echo "killing eventstore"
-          killall eventstored
+          pkill eventstored > $WERCKER_REPORT_ARTIFACTS_DIR/kill.txt
           echo "killed eventstore"
           ls 
           ls ./serverlogs
