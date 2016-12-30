@@ -18,7 +18,7 @@ build:
           wget http://download.geteventstore.com/binaries/EventStore-OSS-Ubuntu-14.04-v3.9.3.tar.gz
           tar xfv EventStore-OSS-Ubuntu-14.04-v3.9.3.tar.gz
           mkdir serverlogs
-          nohup ./EventStore-OSS-Ubuntu-14.04-v3.9.3/eventstored --enable-trusted-auth --run-projections All --mem-db --log ./serverlogs &
+          nohup ./EventStore-OSS-Ubuntu-14.04-v3.9.3/eventstored --enable-trusted-auth --run-projections All --mem-db --log serverlogs &
           
     # Build
     - script:
@@ -37,7 +37,7 @@ build:
     - script:
         name: copy log files
         code: | 
-          ls ./serverlogs
+          ls EventStore-OSS-Ubuntu-14.04-v3.9.3/eventstored
           echo "copying server logs"
           cp serverlogs $WERCKER_REPORT_ARTIFACTS_DIR
           echo "copying output"
