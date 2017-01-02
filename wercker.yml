@@ -18,7 +18,7 @@ build:
           wget http://download.geteventstore.com/binaries/EventStore-OSS-Ubuntu-14.04-v3.9.3.tar.gz
           tar xfv EventStore-OSS-Ubuntu-14.04-v3.9.3.tar.gz
           pushd ./EventStore-OSS-Ubuntu-14.04-v3.9.3
-          nohup ./eventstored --enable-trusted-auth --run-projections All --mem-db --log ~ &
+          nohup ./eventstored --enable-trusted-auth --run-projections All --mem-db --log ~/logs &
           popd          
           
     # Build
@@ -41,6 +41,6 @@ build:
           echo "contents of ~"
           ls ~
           echo "copying server logs"
-          cp -R ~ $WERCKER_REPORT_ARTIFACTS_DIR          
+          cp -R ~/logs $WERCKER_REPORT_ARTIFACTS_DIR          
           echo "copying output"
           cp ./build.out $WERCKER_REPORT_ARTIFACTS_DIR
