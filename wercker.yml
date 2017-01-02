@@ -34,12 +34,16 @@ build:
           #nohup ./eventstored --enable-trusted-auth --run-projections All --mem-db --log ~ &
           #popd
           ./EventStore-OSS-Ubuntu-14.04-v3.9.3/eventstored --enable-trusted-auth --run-projections All --mem-db > es.out 2> es.err < /dev/null &
+          echo "running processes"
+          ps
           ./run_suppressed_tests.sh
     
   after-steps:
     - script:
         name: copy log files
         code: | 
+          echo "running processes"
+          ps
           echo "copying server logs"
           cp es.* $WERCKER_REPORT_ARTIFACTS_DIR          
           echo "copying output"
