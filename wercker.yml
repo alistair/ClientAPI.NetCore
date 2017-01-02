@@ -40,6 +40,8 @@ build:
           cp EventStore-OSS-Ubuntu-14.04-v3.9.3/log.config $WERCKER_REPORT_ARTIFACTS_DIR
           echo "contents of ."
           ls .
+          echo "contents of ~"
+          ls ~
           echo "contents of Event Store"
           ls EventStore-OSS-Ubuntu-14.04-v3.9.3
           echo "copying server logs"
