@@ -30,9 +30,10 @@ build:
         name: Run tests
         code: |
           dotnet restore
-          pushd ./EventStore-OSS-Ubuntu-14.04-v3.9.3
-          nohup ./eventstored --enable-trusted-auth --run-projections All --mem-db --log ~ &
-          popd
+          #pushd ./EventStore-OSS-Ubuntu-14.04-v3.9.3
+          #nohup ./eventstored --enable-trusted-auth --run-projections All --mem-db --log ~ &
+          #popd
+          nohup ./EventStore-OSS-Ubuntu-14.04-v3.9.3/eventstored --enable-trusted-auth --run-projections All --mem-db --log ~ &
           ./run_suppressed_tests.sh
     
   after-steps:
