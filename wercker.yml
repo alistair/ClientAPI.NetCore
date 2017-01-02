@@ -33,7 +33,7 @@ build:
           #pushd ./EventStore-OSS-Ubuntu-14.04-v3.9.3
           #nohup ./eventstored --enable-trusted-auth --run-projections All --mem-db --log ~ &
           #popd
-          ./EventStore-OSS-Ubuntu-14.04-v3.9.3/eventstored --enable-trusted-auth --run-projections All --mem-db > ~/es.log &
+          nohup ./EventStore-OSS-Ubuntu-14.04-v3.9.3/eventstored --enable-trusted-auth --run-projections All --mem-db > es.out 2> es.err < /dev/null &
           ./run_suppressed_tests.sh
     
   after-steps:
