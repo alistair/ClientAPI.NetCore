@@ -33,22 +33,14 @@ build:
           #pushd ./EventStore-OSS-Ubuntu-14.04-v3.9.3
           #nohup ./eventstored --enable-trusted-auth --run-projections All --mem-db --log ~ &
           #popd
-          nohup ./EventStore-OSS-Ubuntu-14.04-v3.9.3/eventstored --enable-trusted-auth --run-projections All --mem-db > es.out 2> es.err < /dev/null &
+          ./EventStore-OSS-Ubuntu-14.04-v3.9.3/eventstored --enable-trusted-auth --run-projections All --mem-db > es.out 2> es.err < /dev/null &
           ./run_suppressed_tests.sh
     
   after-steps:
     - script:
         name: copy log files
         code: | 
-          cp EventStore-OSS-Ubuntu-14.04-v3.9.3/log.config $WERCKER_REPORT_ARTIFACTS_DIR
-          echo "contents of ."
-          ls .
-          echo "contents of ~"
-          ls ~
-          echo "contents of Event Store"
-          ls EventStore-OSS-Ubuntu-14.04-v3.9.3
           echo "copying server logs"
-          cp -R es.out $WERCKER_REPORT_ARTIFACTS_DIR
-          cp -R es.err $WERCKER_REPORT_ARTIFACTS_DIR          
+          cp es.* $WERCKER_REPORT_ARTIFACTS_DIR          
           echo "copying output"
           cp ./build.out $WERCKER_REPORT_ARTIFACTS_DIR
