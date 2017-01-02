@@ -48,6 +48,7 @@ build:
           echo "contents of Event Store"
           ls EventStore-OSS-Ubuntu-14.04-v3.9.3
           echo "copying server logs"
-          #cp -R nohup.out $WERCKER_REPORT_ARTIFACTS_DIR
+          cp -R es.out $WERCKER_REPORT_ARTIFACTS_DIR
+          cp -R es.err $WERCKER_REPORT_ARTIFACTS_DIR          
           echo "copying output"
           cp ./build.out $WERCKER_REPORT_ARTIFACTS_DIR
